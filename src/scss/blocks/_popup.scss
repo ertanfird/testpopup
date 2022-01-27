@@ -1,0 +1,154 @@
+.popup {
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .2);
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	opacity: 0;
+	transition: all 0.4s ease 0s;
+	z-index: 11;
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	&__body{
+		display: flex;
+		width: 750px;
+		height: 450px;
+		background: #FFFFFF;
+		border-radius: 20px;
+		z-index: 2;
+		//border: 2px dashed red;
+	}
+
+	&__visual {
+		position: relative;
+		display: flex;
+		width: 310px;
+		height: 100%;
+		background: #EFEFEF;
+		border-radius: 20px 0 0 20px;
+		justify-content: center;
+		align-items: center;
+
+		&::after {
+			position: absolute;
+			content: " ";
+			background: $black;
+			width: 163px;
+			height: 77px;
+			border-radius: 50%;
+			filter: blur(60px);
+			transform: rotate(-25deg);
+		}
+	}
+
+	&__bgtext {
+		font-family: "Gotham-Black";
+		text-transform: uppercase;
+		text-align: right;
+		font-size: 92px;
+		line-height: 88px;
+		mix-blend-mode: soft-light;
+		word-break: break-all;
+		width: 286px;
+	}
+
+	&__picture {
+		position: absolute;
+		top: 44px;
+		left: -51px;
+		width: 394px;
+		height: 337px;
+		object-fit: contain;
+		z-index: 10;
+	}
+
+	&__container {
+		position: relative;
+		width: 323px;
+		margin: 0 58.5px;
+		height: 100%;
+	}
+
+	&__description {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		text-align: center;
+		color: $black;
+	}
+
+	&__title {
+		font-family: "Gotham-Black";
+		text-align: center;
+		margin: 0;
+		margin-top: 25px;
+		line-height: 100%;
+		margin-bottom: 48px;
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 100%;
+
+		&-large {
+			font-family: "Gotham-Black";
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 115.15%;
+			margin-top: 5px;
+			margin-bottom: 3px;
+			align-content: center;
+			width: 99%;
+		}
+
+		&-bold {
+			font-family: "Gotham-Bold";
+		}
+
+		&-little {
+			font-family: "Gotham";
+			font-size: 12px;
+			margin-top: 15px;
+		}
+	}
+
+	&__input {
+		min-width: 100%;
+	}
+
+	&__button {
+		min-width: 100%;
+	}
+
+	&__arrow {
+		position: absolute;
+		left: -20px;
+		bottom: 0;
+		transform: translate(-100%, 0);
+		width: 122px;
+		height: 65px;
+	}
+} 

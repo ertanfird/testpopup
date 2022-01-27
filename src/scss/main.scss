@@ -1,0 +1,17 @@
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "blocks";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Gotham";
+  box-sizing: border-box;
+}
+
+body, head {
+  min-height: 100vh;
+  height: 100vh;
+}
